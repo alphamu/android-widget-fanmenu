@@ -1,8 +1,10 @@
 # FanMenu
 
-A simple library for setting up menu's that can be animated in and out.
+A simple widget that can be used to display menu's which can be animated in and out.
 The menu's can be animated in from behind a button like a FloatingActionButton
 to give an effect of a submenu or can be placed on the screen to work as menus.
+
+![Fan Menu with FAB](http://i.giphy.com/l0DEKHNqfwwCTmS8U.gif) ![Fan Menu without FAB](http://i.giphy.com/eqek1YdF2UFR6.gif) 
 
 ## Features
 
@@ -89,6 +91,35 @@ to give an effect of a submenu or can be placed on the screen to work as menus.
 - `app:fanButtonHeight` (Optional) `dp` the height of the buttons in DP. `32dp` by default.
 - `app:fanAngleBetweenButtons` (Optional) `int` the angle between the buttons. `10 degrees` by default.
 - `app:fanAnimationDuration` (Optional) `int` the time taken for the open and close animation. `200ms` by default.
+
+## Callbacks
+
+	final FanMenuButtons sub = (FanMenuButtons) findViewById(R.id.myFABSubmenu);
+    if (sub != null) {
+        sub.setOnFanButtonClickListener(new FanMenuButtons.OnFanClickListener() {
+            @Override
+            public void onFanButtonClicked(int index) {
+            }
+        });
+
+		sub.setOnFanAnimationListener(new FanMenuButtons.OnFanAnimationListener() {
+			@Override
+			public void onAnimateInStarted() {
+			}
+
+			@Override
+			public void onAnimateOutStarted() {
+			}
+
+			@Override
+			public void onAnimateInFinished() {
+			}
+
+			@Override
+			public void onAnimateOutFinished() {
+			}
+		});
+	}
 	
 ## Known Issues
 
