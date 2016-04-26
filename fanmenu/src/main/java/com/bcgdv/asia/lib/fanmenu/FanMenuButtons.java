@@ -53,7 +53,6 @@ public class FanMenuButtons extends TextView {
     protected float mMinBounceBackAngle = -1000;
     protected float mMaxBounceBackAngle = 1000;
 
-    //protected float mPadding = 24; //internal to fix alignment issues
     protected float mDrawablePadding = 8;
     protected float mButtonLeftStart = 0;
 
@@ -69,21 +68,45 @@ public class FanMenuButtons extends TextView {
     private float dp2 = 2;
     private float dp1 = 1;
 
+    /**
+     * Constructor for FanMenuButtons
+     *
+     * @param context Context
+     */
     public FanMenuButtons(Context context) {
         super(context);
         init(context, null);
     }
 
+    /**
+     * Constructor for FanMenuButtons
+     *
+     * @param context Context
+     * @param attrs AttributeSet
+     */
     public FanMenuButtons(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
 
+    /**
+     * Constructor for FanMenuButtons
+     *
+     * @param context Context
+     * @param attrs AttributeSet
+     * @param defStyleAttr Style
+     */
     public FanMenuButtons(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
 
+    /**
+     * Initialize the FanMenuButtons widget
+     *
+     * @param context Context
+     * @param attrs AttributeSet
+     */
     protected void init(Context context, AttributeSet attrs) {
         float multi = getResources().getDisplayMetrics().density;
         dp2 *= multi;
@@ -180,6 +203,9 @@ public class FanMenuButtons extends TextView {
         mViewScaledTouchSlop = viewConfig.getScaledTouchSlop();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         // Try for a width based on our minimum
@@ -194,12 +220,21 @@ public class FanMenuButtons extends TextView {
         setMeasuredDimension(w, h);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         initIfNeeded(w, h);
     }
 
+    /**
+     * Setup the widget if needed.
+     *
+     * @param w int, width available to the widget.
+     * @param h int, height available to the widget.
+     */
     protected void initIfNeeded(int w, int h) {
         if (mCanvas[0] == null) {
             mButtonLeftStart = getPaddingLeft();
@@ -217,12 +252,26 @@ public class FanMenuButtons extends TextView {
         }
     }
 
+    /**
+     * Setup the rotation matrix for all buttons.
+     *
+     * This is used in onDraw to rorate the button image to the correct angle and
+     * move it to the bottom of the screen.
+     */
     protected void setupMatrixs() {
         for (int i = 0; i < mButtons.length; i++) {
             setupMatrix(i);
         }
     }
 
+    /**
+     * Setup the rotation matrix for the button at index.
+     *
+     * This is used in onDraw to rorate the button image to the correct angle and
+     * move it to the bottom of the screen.
+     *
+     * @param i index of the button
+     */
     protected void setupMatrix(int i) {
         if (mMatrix[i] == null) {
             mMatrix[i] = new Matrix();
@@ -232,11 +281,9 @@ public class FanMenuButtons extends TextView {
         mMatrix[i].postTranslate(0, getHeight() - mButtonHeight - getPaddingBottom());
     }
 
-    @Override
-    public void setVisibility(int visibility) {
-        super.setVisibility(visibility);
-    }
-
+    /**
+     * {@inheritDoc}
+     */
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -265,12 +312,21 @@ public class FanMenuButtons extends TextView {
 
     }
 
+    /**
+     * Draw all bitmaps (button images). If the images already exist, they will be wiped
+     * before being redrawn.
+     */
     protected void drawAllBitmaps() {
         for (int i = 0; i < mButtons.length; i++) {
             drawBitmap(i);
         }
     }
 
+    /**
+     * Draw te button bitmap for the given index. This will clear the image first.
+     *
+     * @param i the index of the button
+     */
     protected void drawBitmap(int i) {
         mCanvas[i].drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
         mPaint.setColor(colors[i]);
@@ -289,6 +345,11 @@ public class FanMenuButtons extends TextView {
         }
     }
 
+    /**
+     * Toggle visibility of the widget.
+     *
+     * This will animate the show and hide.
+     */
     public void toggleShow() {
         if (getVisibility() == View.VISIBLE) {
             animateOut();
@@ -297,6 +358,9 @@ public class FanMenuButtons extends TextView {
         }
     }
 
+    /**
+     * Animate and show the widget.
+     */
     public void animateIn() {
         if (mAnimationInProgress) {
             return;
@@ -395,6 +459,9 @@ public class FanMenuButtons extends TextView {
         }
     }
 
+    /**
+     * Animate and hide the widget.
+     */
     public void animateOut() {
         if (mAnimationInProgress) {
             return;
@@ -485,14 +552,30 @@ public class FanMenuButtons extends TextView {
         }
     }
 
+    /**
+     * Set callback for the fan button click events.
+     *
+     * @param l OnFanClickListener
+     */
     public void setOnFanButtonClickListener(OnFanClickListener l) {
         mClickListener = l;
     }
 
+    /**
+     * Set a callback which is informated when animations starts/ends for the widget.
+     *
+     * @param l OnFanAnimationListener
+     */
     public void setOnFanAnimationListener(OnFanAnimationListener l) {
         mAnimListener = l;
     }
 
+    /**
+     * Set the selected state on the button with the provided index and reset all
+     * the other buttons to normal state.
+     *
+     * @param index the index of the button to mark as selected.
+     */
     private void setButtonSelected(int index) {
         if (drawables == null) {
             return; //no need to do anything
@@ -516,6 +599,9 @@ public class FanMenuButtons extends TextView {
     private boolean mPointerDown = false;
     private boolean mIsMoving = false;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (mClickListener == null || getVisibility() == View.INVISIBLE || mAnimationInProgress) {
@@ -605,6 +691,9 @@ public class FanMenuButtons extends TextView {
         return false;
     }
 
+    /**
+     * This method animates the fan back to the starting position, if the appropriate flags are set.
+     */
     private void animatedAdditionalRotationToZero() {
         if (mAdditionalRotateAngle == 0 || mAnimationInProgress) {
             return;
@@ -649,6 +738,16 @@ public class FanMenuButtons extends TextView {
         anim.start();
     }
 
+    /**
+     * Have we moved enough to trigger a scroll
+     *
+     * @param event MotionEvent.
+     * @param ptrIndex Pointer index.
+     * @param originalX x-coordinate
+     * @param originalY y-coordinate
+     *
+     * @return boolean true if we detect scrolling
+     */
     protected boolean isScrollGesture(MotionEvent event, int ptrIndex, float originalX, float originalY) {
         float moveX = Math.abs(event.getX(ptrIndex) - originalX);
         float moveY = Math.abs(event.getY(ptrIndex) - originalY);
@@ -659,10 +758,16 @@ public class FanMenuButtons extends TextView {
         return false;
     }
 
+    /**
+     * An interface for click events on the buttons.
+     */
     public interface OnFanClickListener {
         void onFanButtonClicked(int index);
     }
 
+    /**
+     * An interface for the animation events of the widget.
+     */
     public interface OnFanAnimationListener {
         void onAnimateInStarted();
 
