@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Fan Menu</string>
+    <string name="menu_top_stories">Top Stories</string>
+    <string name="menu_sports">Sports News</string>
+    <string name="menu_tech">Technology News</string>
+    <string name="menu_local">Local News</string>
+    <string-array name="fan_labels">
+        <item>@string/menu_top_stories</item>
+        <item>@string/menu_local</item>
+        <item>@string/menu_sports</item>
+        <item>@string/menu_tech</item>
+    </string-array>
+</resources>

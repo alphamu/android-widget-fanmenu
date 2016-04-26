@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="red_1">#C2185B</color>
+    <color name="red_2">#E91E63</color>
+    <color name="red_3">#F44336</color>
+    <color name="red_4">#FF5722</color>
+    <integer-array name="button_colors">
+        <item>@color/red_1</item>
+        <item>@color/red_2</item>
+        <item>@color/red_3</item>
+        <item>@color/red_4</item>
+    </integer-array>
+
+    <array name="button_icons">
+        <item>@drawable/bg_addgoal</item>
+        <item>@drawable/ic_cashout</item>
+        <item>@drawable/ic_invest</item>
+        <item>@drawable/ic_qrcode</item>
+    </array>
+</resources>

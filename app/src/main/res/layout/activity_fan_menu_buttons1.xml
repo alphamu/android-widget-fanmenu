@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:clipChildren="false"
+    android:clipToPadding="true"
+    tools:context=".FanMenuButtons1Activity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="#000000"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed justo quis sapien gravida consectetur vel eu ipsum. Phasellus tincidunt, lacus vel ultrices posuere, mauris est facilisis ex, nec cursus dui lacus id massa. Proin quis ligula massa. Nullam congue, metus sed euismod tempus, elit libero semper diam, ut finibus arcu elit quis augue. Suspendisse pharetra libero et dolor suscipit efficitur. Donec auctor tempor metus vitae tempus. Suspendisse non tincidunt mauris. Ut quis tincidunt diam, nec semper tortor. Aenean interdum, mi sed pellentesque fermentum, ex augue viverra orci, ut mattis metus arcu sed tellus. Ut sed ipsum at est convallis rhoncus. Nullam sed imperdiet enim, sed aliquet quam. Nunc erat risus, condimentum tempor interdum sed, eleifend a ipsum. Vivamus nulla dui, dictum id condimentum eu, scelerisque in magna. Vestibulum iaculis tempor diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;"/>
+
+    <com.bcgdv.asia.lib.fanmenu.FanMenuButtons
+    android:background="#CCFFFFFF"
+    android:id="@+id/myFABSubmenu"
+    android:layout_alignBaseline="@+id/myFAB"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textColor="@android:color/white"
+    android:paddingRight="@dimen/fab_submenu_margin_right"
+    android:paddingBottom="@dimen/fab_submenu_margin_bottom"
+    android:textSize="14sp"
+    app:fanMenuLabels="@array/fan_labels"
+    app:fanButtonColors="@array/button_colors"
+    app:fanLeftDrawable="@array/button_icons"
+    app:fanRememberMovedPosition="true"
+    app:fanMinBounceBackAngle="-30"
+    app:fanMaxBounceBackAngle="50"
+    android:visibility="invisible"
+    app:elevation="4dp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/myFAB"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin_right"
+        android:src="@android:drawable/btn_star_big_off"
+        app:elevation="4dp" />
+
+</RelativeLayout>
