@@ -17,12 +17,15 @@ to give an effect of a submenu or can be placed on the screen to work as menus.
 
 ## Adding it to your project
 
-    compile 'com.bcgdv.asia.lib:fanmenu:1.0'
-	
+```groovy
+compile 'com.bcgdv.asia.lib:fanmenu:1.0'
+```
+
 ## Usage
 
 ### The menus needs to be configured in the XML.
 
+```xml
     <com.bcgdv.asia.lib.fanmenu.FanMenuButtons
         android:background="#CCFFFFFF"
         android:id="@+id/myFABSubmenu"
@@ -40,10 +43,11 @@ to give an effect of a submenu or can be placed on the screen to work as menus.
         app:fanMinBounceBackAngle="-30"
         app:fanMaxBounceBackAngle="50"
         android:visibility="gone" />
+```
 
-		
 ### Labels need to be defined as `string-array` resource.
 
+```xml
     <string name="menu_top_stories">Top Stories</string>
     <string name="menu_sports">Sports News</string>
     <string name="menu_tech">Technology News</string>
@@ -54,10 +58,11 @@ to give an effect of a submenu or can be placed on the screen to work as menus.
         <item>@string/menu_sports</item>
         <item>@string/menu_tech</item>
     </string-array>
-
+```
 
 ### Button colors need to be defined as an `integer-array` resource.
 
+```xml
     <color name="red_1">#C2185B</color>
     <color name="red_2">#E91E63</color>
     <color name="red_3">#F44336</color>
@@ -68,17 +73,18 @@ to give an effect of a submenu or can be placed on the screen to work as menus.
         <item>@color/red_3</item>
         <item>@color/red_4</item>
     </integer-array>
-	
+```	
 
 ### Icons need to be defined as an `array` resource.
 
+```xml
     <array name="button_icons">
         <item>@drawable/bg_addgoal</item>
         <item>@drawable/ic_cashout</item>
         <item>@drawable/ic_invest</item>
         <item>@drawable/ic_qrcode</item>
     </array>
-
+```
 
 - `android:background` (Optional) the background drawable will fade in/out as the menu opens and closes. Can be `null`.
 - `app:fanMenuLabels` (Required) a `string-array` from the resources folder. See above or the sample app for more.
@@ -94,6 +100,7 @@ to give an effect of a submenu or can be placed on the screen to work as menus.
 
 ## Callbacks
 
+```java
 	final FanMenuButtons sub = (FanMenuButtons) findViewById(R.id.myFABSubmenu);
     if (sub != null) {
         sub.setOnFanButtonClickListener(new FanMenuButtons.OnFanClickListener() {
@@ -120,7 +127,8 @@ to give an effect of a submenu or can be placed on the screen to work as menus.
 			}
 		});
 	}
-	
+```
+
 ## Known Issues
 
 - RTL support is not great.
