@@ -1,17 +1,17 @@
 apply plugin: 'com.android.library'
 
 ext {
-    bintrayRepo = 'maven'
-    bintrayName = 'android-fanmenu'
+    bintrayRepo = 'android'
+    bintrayName = 'fanmenu'
 
     publishedGroupId = 'com.bcgdv.asia.lib'
     libraryName = 'FanMenu'
-    artifact = 'android-fanmenu'
+    artifact = 'fanmenu'
 
     libraryDescription = 'A simple widget that can be used to display menu\'s which can be animated in and out.'
 
-    siteUrl = 'https://github.com/BCGDV-ASIA/android-fanmenu'
-    gitUrl = 'https://github.com/BCGDV-ASIA/android-fanmenu.git'
+    siteUrl = 'https://github.com/BCGDV-ASIA/android-widget-fanmenu'
+    gitUrl = 'https://github.com/BCGDV-ASIA/android-widget-fanmenu.git'
 
     libraryVersion = '1.0'
 

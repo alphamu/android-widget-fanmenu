@@ -17,7 +17,7 @@ to give an effect of a submenu or can be placed on the screen to work as menus.
 
 ## Adding it to your project
 
-    `TO DO`
+    compile 'com.bcgdv.asia.lib:fanmenu:1.0'
 	
 ## Usage
 
