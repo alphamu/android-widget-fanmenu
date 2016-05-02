@@ -660,11 +660,13 @@ public class FanMenuButtons extends TextView {
             if (!mEnableTouchMovement) {
                 return false;
             }
-            boolean isPrimMoving = isScrollGesture(event, 0, mTouchArea.left, mTouchArea.top);
+            boolean isPrimMoving = mIsMoving? mIsMoving : isScrollGesture(event, 0, mTouchArea.left, mTouchArea.top);
             if (isPrimMoving) {
                 mIsMoving = true;
                 final float diffPrimX = mTouchArea.left - event.getX(0);
                 final float diffPrimY = mTouchArea.top - event.getY(0);
+                mTouchArea.left = event.getX(0);
+                mTouchArea.top = event.getY(0);
                 float moveBy = Math.abs(diffPrimX);
                 boolean add = diffPrimX > 0;
                 if (Math.abs(diffPrimX) < Math.abs(diffPrimY)) {
@@ -677,9 +679,9 @@ public class FanMenuButtons extends TextView {
                     //and convert to degrees.
                     moveBy *= 0.50;
                     if (add) {
-                        mAdditionalRotateAngle = -moveBy;
+                        mAdditionalRotateAngle -= moveBy;
                     } else {
-                        mAdditionalRotateAngle = moveBy;
+                        mAdditionalRotateAngle += moveBy;
                     }
 
                     setupMatrixs();
