@@ -13,11 +13,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    protected void onClick_withFab(View view) {
+    public void onClick_withFab(View view) {
         startActivity(new Intent(this, FanMenuButtons1Activity.class));
     }
 
-    protected void onClick_withoutFab(View view) {
+    public void onClick_withoutFab(View view) {
         startActivity(new Intent(this, FanMenuButtons2Activity.class));
     }
 }
