@@ -1,10 +1,14 @@
+[![Build Status](https://travis-ci.org/BCGDV-ASIA/android-widget-fanmenu.svg?branch=master)](https://travis-ci.org/BCGDV-ASIA/android-widget-fanmenu)
+[![Download](https://api.bintray.com/packages/bcgdv/android/fanmenu/images/download.svg)](https://bintray.com/bcgdv/android/fanmenu/_latestVersion)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-FanMenu-brightgreen.svg?style=flat)](http://android-arsenal.com/details/1/3555)
+
 # FanMenu
 
 A simple widget that can be used to display menu's which can be animated in and out.
 The menu's can be animated in from behind a button like a FloatingActionButton
 to give an effect of a submenu or can be placed on the screen to work as menus.
 
-![Fan Menu with FAB](http://i.giphy.com/l0DEKHNqfwwCTmS8U.gif) ![Fan Menu without FAB](http://i.giphy.com/eqek1YdF2UFR6.gif) 
+[![Build Status](https://travis-ci.org/BCGDV-ASIA/android-widget-fanmenu.svg?branch=master)](https://travis-ci.org/BCGDV-ASIA/android-widget-fanmenu) ![Fan Menu with FAB](http://i.giphy.com/l0DEKHNqfwwCTmS8U.gif) ![Fan Menu without FAB](http://i.giphy.com/eqek1YdF2UFR6.gif)
 
 ## Features
 
