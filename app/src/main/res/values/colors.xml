@@ -9,14 +9,26 @@
     <color name="red_2">#E91E63</color>
     <color name="red_3">#F44336</color>
     <color name="red_4">#FF5722</color>
+    <color name="red_5">#D3296C</color>
+    <color name="red_6">#FA2F74</color>
+    <color name="red_7">#F55447</color>
+    <color name="red_8">#FF6833</color>
     <integer-array name="button_colors">
         <item>@color/red_1</item>
         <item>@color/red_2</item>
         <item>@color/red_3</item>
         <item>@color/red_4</item>
+        <item>@color/red_5</item>
+        <item>@color/red_6</item>
+        <item>@color/red_7</item>
+        <item>@color/red_8</item>
     </integer-array>
 
     <array name="button_icons">
+        <item>@drawable/bg_addgoal</item>
+        <item>@drawable/ic_cashout</item>
+        <item>@drawable/ic_invest</item>
+        <item>@drawable/ic_qrcode</item>
         <item>@drawable/bg_addgoal</item>
         <item>@drawable/ic_cashout</item>
         <item>@drawable/ic_invest</item>

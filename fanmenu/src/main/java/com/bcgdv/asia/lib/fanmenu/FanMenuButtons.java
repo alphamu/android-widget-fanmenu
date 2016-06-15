@@ -624,7 +624,7 @@ public class FanMenuButtons extends TextView {
                 //tan theta = opp/adj
 
                 double angle = Math.toDegrees(Math.atan2(mTouchArea.height(), mTouchArea.width()));
-                if (mTouchArea.width() < mButtonWidth / 2 && angle < menus.length * mRotateAngle) {
+                if (mTouchArea.width() < mButtonWidth / 2 && mTouchArea.height() < mButtonWidth / 2 && angle < menus.length * mRotateAngle) {
                     //Do nothing, clicked too close to the FAB.
                     if (BuildConfig.DEBUG) {
                         Log.d("TEST", "TOO CLOSE TO FAB, DO NOTHING");
