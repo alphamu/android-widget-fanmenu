@@ -27,10 +27,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
 import android.widget.TextView;
 
-/**
- * Created by Ali Muzaffar on 11/04/2016.
- */
-public class FanMenuButtons extends TextView {
+public class FanMenuButtons extends android.support.v7.widget.AppCompatTextView {
     protected long mAnimationDuration = 200;
     protected float mAngleBetweenButtons = 10; //degrees
 
