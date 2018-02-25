@@ -1,5 +1,6 @@
 package com.bcgdv.asia.fanmenu;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.bcgdv.asia.lib.fanmenu.FanMenuButtons;
+
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class FanMenuButtons1Activity extends AppCompatActivity {
 
@@ -34,8 +37,11 @@ public class FanMenuButtons1Activity extends AppCompatActivity {
                 });
             }
         }
+    }
 
-
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 
 }

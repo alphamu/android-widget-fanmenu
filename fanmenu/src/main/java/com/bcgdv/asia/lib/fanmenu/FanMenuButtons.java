@@ -25,7 +25,6 @@ import android.view.ViewConfiguration;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
-import android.widget.TextView;
 
 public class FanMenuButtons extends android.support.v7.widget.AppCompatTextView {
     protected long mAnimationDuration = 200;
@@ -109,7 +108,7 @@ public class FanMenuButtons extends android.support.v7.widget.AppCompatTextView 
         dp2 *= multi;
         dp1 *= multi;
         mPaint.setAntiAlias(true);
-        mTxtPaint = new Paint(getPaint());
+        mTxtPaint = getPaint();
         mTxtPaint.setColor(getTextColors().getDefaultColor());
         mTxtPaint.setAntiAlias(true);
 

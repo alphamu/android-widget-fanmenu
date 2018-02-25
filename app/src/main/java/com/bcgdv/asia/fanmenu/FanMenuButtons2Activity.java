@@ -13,7 +13,7 @@ public class FanMenuButtons2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fan_menu_buttons1);
+        setContentView(R.layout.activity_fan_menu_buttons2);
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.myFAB);
         final FanMenuButtons sub = (FanMenuButtons) findViewById(R.id.myFABSubmenu);
         if (sub != null) {
@@ -39,5 +39,4 @@ public class FanMenuButtons2Activity extends AppCompatActivity {
 
 
     }
-
 }

@@ -16,12 +16,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed justo quis sapien gravida consectetur vel eu ipsum. Phasellus tincidunt, lacus vel ultrices posuere, mauris est facilisis ex, nec cursus dui lacus id massa. Proin quis ligula massa. Nullam congue, metus sed euismod tempus, elit libero semper diam, ut finibus arcu elit quis augue. Suspendisse pharetra libero et dolor suscipit efficitur. Donec auctor tempor metus vitae tempus. Suspendisse non tincidunt mauris. Ut quis tincidunt diam, nec semper tortor. Aenean interdum, mi sed pellentesque fermentum, ex augue viverra orci, ut mattis metus arcu sed tellus. Ut sed ipsum at est convallis rhoncus. Nullam sed imperdiet enim, sed aliquet quam. Nunc erat risus, condimentum tempor interdum sed, eleifend a ipsum. Vivamus nulla dui, dictum id condimentum eu, scelerisque in magna. Vestibulum iaculis tempor diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;"
-        fontPath="fonts/IndieFlower.ttf"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:fontFamily="@font/indieflower_family" />
 
     <com.bcgdv.asia.lib.fanmenu.FanMenuButtons
         android:id="@+id/myFABSubmenu"
-        fontPath="fonts/IndieFlower.ttf"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignBaseline="@+id/myFAB"
@@ -37,7 +36,8 @@
         app:fanMaxBounceBackAngle="50"
         app:fanMenuLabels="@array/fan_labels"
         app:fanMinBounceBackAngle="-30"
-        app:fanRememberMovedPosition="true" />
+        app:fanRememberMovedPosition="true"
+        android:fontFamily="@font/indieflower" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/myFAB"
